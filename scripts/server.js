@@ -15,12 +15,12 @@ const app = express();
 app.get('/', (req, res) => {
 
   const query = {
-    // users: [
-    //   ['users', {filter: "email like '%@asdf.com'"}]
-    // ],
-    // user: [
-    //   ['user', {id: 2}]
-    // ],
+    users: [
+      ['users', {filter: "email like '%@asdf.com'"}]
+    ],
+    user: [
+      ['user', {id: 2}]
+    ],
     oneOrder: [
       ['order', {id: 2}],
       {
@@ -32,27 +32,27 @@ app.get('/', (req, res) => {
         ]
       }
     ],
-    // kitchenSink: [
-    //   ['user', {id: 1}],
-    //   {
-    //     orders: [
-    //       ['user->orders', {limit: 2}],
-    //       {
-    //         user: [
-    //           ['order->user']
-    //         ],
-    //         items: [
-    //           ['order->items'],
-    //           {
-    //             order: [
-    //               ['item->order']
-    //             ]
-    //           }
-    //         ],
-    //       }
-    //     ]
-    //   }
-    // ]
+    kitchenSink: [
+      ['user', {id: 1}],
+      {
+        orders: [
+          ['user->orders', {limit: 2}],
+          {
+            user: [
+              ['order->user']
+            ],
+            items: [
+              ['order->items'],
+              {
+                order: [
+                  ['item->order']
+                ]
+              }
+            ],
+          }
+        ]
+      }
+    ]
   };
 
   return fetchCompositeQuery({db: db, schema: schema, handlers: handlers}, {}, null, query).then((result) => {
