@@ -1,0 +1,12 @@
+{
+  "node": true,
+  "esnext": true,
+  "quotmark": true,
+  "predef": [
+    "jest",
+    "expect",
+    "it",
+    "pit",
+    "describe"
+  ]
+}

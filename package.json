@@ -1,0 +1,22 @@
+{
+  "name": "shopping-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "server:start": "node scripts/server.js",
+    "db:migrate": "node scripts/db_migrate.js",
+    "db:cleanup": "node scripts/db_cleanup.js"
+  },
+  "author": "Frank Liu <gniquil@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "express": "^4.13.3"
+  },
+  "dependencies": {
+    "extend": "^3.0.0",
+    "pg-promise": "^1.11.0"
+  }
+}
